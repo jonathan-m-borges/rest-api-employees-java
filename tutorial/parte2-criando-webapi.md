@@ -366,9 +366,12 @@ Para testar os endpoints da aplicação, vamos utilizar o Postman
 ---
 ### Referências
  
+ - [WebAPI HenriqueJW]/(https://github.com/HenriqueJW/API-Java-Empregados)
  - [ServiceLayer](https://trailhead.salesforce.com/pt-BR/content/learn/modules/apex_patterns_sl/apex_patterns_sl_learn_sl_principles)
  - [ServiceLayer](https://martinfowler.com/eaaCatalog/serviceLayer.html)
  - [Documentando APIs com apiary.io](https://apiary.io/)
- 
- 
- 
+ - [Java VSCode Spring](https://www.youtube.com/watch?v=dkmlOi_MNb4)
+ - [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
+ - [Spring Boot Maven Plugin Documentation](https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/maven-plugin/reference/html/)
+ - [Como criar Web Services RESTful com Spring Boot](https://blog.algaworks.com/como-criar-web-services-restful-com-spring-boot/)
+ - [Lombok](https://medium.com/collabcode/projeto-lombok-escrevendo-menos-c%C3%B3digo-em-java-8fc87b379209)
