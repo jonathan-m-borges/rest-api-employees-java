@@ -9,8 +9,9 @@ Serão instalados:
  - JDK14
  - Extenções do VSCode
 
+Além disso, será implementado um pequeno projeto demo para testar o ambiente.
 
-Embora existam algumas IDEs (Integrated Development Environment) especializadas para desenvolvimento em Java (Eclipse, Netbeans, IntelliJ), neste tutorial vamos utilizar o Visual Studio Code (VSCode)!!!
+Obs.: Embora existam algumas IDEs (Integrated Development Environment) especializadas para desenvolvimento em Java (Eclipse, Netbeans, IntelliJ), neste tutorial vamos utilizar o Visual Studio Code (VSCode)!!!
 
 
 ---
@@ -35,19 +36,6 @@ Configure as variáveis de ambiente do seu sistema:
  - Configure a variável **PATH**, adicionando a entrada ```%JAVA_HOME%\bin```
 
 > Se tudo deu certo, ao entrar na linha de comando e digitar ```java -version``` deve ser apresentada a versão **java 14.0.1** no console.
-
-
----
-### Instalando o Maven - gerenciador de pacotes e configurações do Java
-
-Siga os procedimentos de instalação informados no link: [https://maven.apache.org/](https://maven.apache.org/)
-
-> ![Dica instalação VSCode](./assets/maven.png)
-
-
-### Instalando o Tomcat
-
-https://tomcat.apache.org/download-90.cgi
 
 
 ---
@@ -109,6 +97,7 @@ Vamos criar um projetinho Java com Spring, para verificar se tudo está OK.
 ---
 ### Referências
  
+ - [Lombok](https://medium.com/collabcode/projeto-lombok-escrevendo-menos-c%C3%B3digo-em-java-8fc87b379209)
  - [Visual Studio Code](https://code.visualstudio.com)
  - [Java + VSCode](https://www.youtube.com/watch?v=vim1bTa-Bkc)
  - [Java VSCode Spring](https://www.youtube.com/watch?v=dkmlOi_MNb4)
