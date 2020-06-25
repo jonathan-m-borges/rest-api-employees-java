@@ -61,15 +61,15 @@ Configure as variáveis de ambiente do seu sistema:
 Vamos criar um projetinho Java com Spring, para verificar se tudo está OK.
 
 - Abra o VSCode, pressione **Ctrl + Shit + P**, digite: **spring init**, selecione a opção: **>Spring Initializr: Generate a Maven Project**
-- Selecione a opção **Java** para gerenciar seu projeto
+- Selecione a opção **Java** como a linguagem para o seu projeto
 - Informe o nome do pacote (Group Id) (pode deixar com.example se preferir)
 - Informe o nome do artefato (Artifact Id) (pode deixar demo se preferir)
 - Especifique a versão do Spring: **2.3.1**
 
-- Adicione as dependências: **Lombok, Spring Boot DevTools, Spring Web**
+- Adicione as dependências: **Lombok, Spring Boot DevTools, Spring Web**, depois pressione <Enter> para continuar
   > ![Dependências do projeto demo](./assets/vs-demo-01.png)
 
-- Selecione um diretório para salvar o seu projeto, e em seguida abra o
+- Selecione um diretório para salvar o seu projeto, e em seguida abra-o
   > ![Abrir projeto demo](./assets/vs-demo-01-B.png)
 
 - Abra o diretório src\main\java\com\example\demo e crie o arquivo DemoController.java
