@@ -1,19 +1,16 @@
 package com.employees.restapi.repositories;
 
 import java.util.Collection;
-
 import com.employees.restapi.models.Employee;
 
 public interface IEmployeesRepository {
+    public Collection<Employee> listAll();
 
-    Collection<Employee> listAll();
+    public Employee getById(long id);
 
-    Employee getById(Long id);
+    public Employee add(Employee employee);
 
-    Employee add(Employee employee);
+    public Employee update(Employee employee);
 
-    Employee update(Employee employee);
-
-    Employee deleteById(Long id);
-
+    public Employee deleteById(long id);
 }

@@ -1,16 +1,15 @@
 package com.employees.restapi.repositories;
-
-import java.util.HashMap;
 import java.util.Collection;
-
+import java.util.HashMap;
 import com.employees.restapi.models.Employee;
 
 import org.springframework.stereotype.Component;
 
-@Component("employeesRepositoryMemory")
+@Component
 public class EmployeesRepositoryMemory implements IEmployeesRepository {
+
     private static Long idCount = 0L;
-    private HashMap<Long, Employee> map = new HashMap<Long, Employee>();
+    private static HashMap<Long, Employee> map = new HashMap<Long, Employee>();
 
     @Override
     public Collection<Employee> listAll() {
@@ -18,7 +17,7 @@ public class EmployeesRepositoryMemory implements IEmployeesRepository {
     }
 
     @Override
-    public Employee getById(Long id) {
+    public Employee getById(long id) {
         if (map.containsKey(id))
             return map.get(id);
         else
@@ -42,12 +41,11 @@ public class EmployeesRepositoryMemory implements IEmployeesRepository {
     }
 
     @Override
-    public Employee deleteById(Long id) {
+    public Employee deleteById(long id) {
         if (!map.containsKey(id))
             return null;
         var employee = map.get(id);
         map.remove(id);
         return employee;
     }
-
 }
