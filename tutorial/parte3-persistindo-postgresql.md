@@ -3,7 +3,7 @@
 ## Parte 3 - Persistindo os dados no banco de dados PostgreSQL
 
 Nesta etapa vamos persistir os dados dos empregados no banco de dados PostgreSQL, utilizando SQL Ansi.
-Na próxima etapa vamos utilizar o PostgreeSQL com JPA.
+Na próxima etapa vamos utilizar o PostgreSQL com JPA.
 
 Será implementado uma nova classe para a interface ```IEmployeesRepository``` que salva os dados no PostgreSQL.
 
@@ -68,19 +68,19 @@ A recomendação neste tutorial é utilizar o **Postbird**.
 - Procure pela biblioteca **PostgreSQL Driver** e marque-a para ser adicionada no projeto, depois pressione enter para continuar e aguarde a instalação:
   > ![Edit starters](./assets/add-lib-postgre-02.png)
 - Como resultado, será adicionado a dependência do PostgreeSQL no seu seu arquivo pom.xml, contendo:
-  > ```xml
-      <dependency>
-      <groupId>org.postgresql</groupId>
-      <artifactId>postgresql</artifactId>
-      <scope>runtime</scope>
-    </dependency>
-    ```
+  ```xml
+    <dependency>
+    <groupId>org.postgresql</groupId>
+    <artifactId>postgresql</artifactId>
+    <scope>runtime</scope>
+  </dependency>
+  ```
 
 
 ---
 #### Incluindo as configurações do banco PostgreSQL no arquivo application.properties
 
-- Edite o arquivo ```application.properties```, localizado no diretório **src\main\resources\application.properties**, incluindo as configurações do PostgreSQL
+- Edite o arquivo ```application.properties```, localizado no diretório **src\main\resources**, incluindo as configurações do PostgreSQL
   ```none
   postgresql.connectionString=jdbc:postgresql://localhost:5432/employees
   postgresql.user=postgres
@@ -91,7 +91,7 @@ A recomendação neste tutorial é utilizar o **Postbird**.
 ---
 ### Criando a classe EmployeesRepositoryPgSql
 
-- Crie o arquivo **EmployeesRepositoryPgSql.java** dentro do diretório ```repositories``` dos seus arquivos fontes.
+- Crie o arquivo **EmployeesRepositoryPgSql.java** dentro do diretório ```repositories``` nos seus arquivos fontes.
   ```java
   package com.employees.restapi.repositories;
   
@@ -297,7 +297,8 @@ A recomendação neste tutorial é utilizar o **Postbird**.
   ```
 
 
-#### Ajustando a classe EmployeesService, para utilizar EmployeesRepositoryPgSql
+---
+### Ajustando a classe EmployeesService, para utilizar EmployeesRepositoryPgSql
 
 - Altere o construtor da classe ```EmployeesService``` para:
   ```java
@@ -311,42 +312,13 @@ A recomendação neste tutorial é utilizar o **Postbird**.
   ```
 
 
-Nesta etapa vamos compilar e executar a aplicação:
-
-- Execute o projeto em modo Debug, pelo **SPRING-BOOT DASHBOARD**:
-  > ![Debug do projeto demo](./assets/vs-demo-01-C.png)
-
-
 ---
-### Testando a aplicação com o Postman
-
-Para testar os endpoints da aplicação, vamos utilizar o Postman
-
-- Instale o Postman caso ainda não tenha instalado. [Site Postman](https://postman.com/) e consuma os endpoints da aplicação.
-- A aplicação estará rodando nas urls:
-  - http://localhost:8080/api/employees
-
-
----
-### Referências
- 
- - [WebAPI HenriqueJW](https://github.com/HenriqueJW/API-Java-Empregados)
- - [ServiceLayer](https://trailhead.salesforce.com/pt-BR/content/learn/modules/apex_patterns_sl/apex_patterns_sl_learn_sl_principles)
- - [ServiceLayer](https://martinfowler.com/eaaCatalog/serviceLayer.html)
- - [Documentando APIs com apiary.io](https://apiary.io/)
- - [Java VSCode Spring](https://www.youtube.com/watch?v=dkmlOi_MNb4)
- - [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
- - [Spring Boot Maven Plugin Documentation](https://docs.spring.io/spring-boot/docs/2.3.1.RELEASE/maven-plugin/reference/html/)
- - [Como criar Web Services RESTful com Spring Boot](https://blog.algaworks.com/como-criar-web-services-restful-com-spring-boot/)
- - [Lombok](https://medium.com/collabcode/projeto-lombok-escrevendo-menos-c%C3%B3digo-em-java-8fc87b379209)
-
-
-#### Execute a aplicação
+### Execute a aplicação
 
 Nesta etapa vamos compilar e executar a aplicação:
 
 - Execute o projeto em modo Debug, pelo **SPRING-BOOT DASHBOARD**:
-  > ![Debug do projeto demo](./assets/vs-demo-01-C.png)
+  > ![Debug do projeto demo](./assets/vs-restapi-debug.png)
 
 
 ---
