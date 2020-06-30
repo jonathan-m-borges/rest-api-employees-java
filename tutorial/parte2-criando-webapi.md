@@ -52,13 +52,18 @@ As operações esperadas na WebAPI são:
   ```java
   package com.employees.restapi.models;
   
+  import java.math.BigDecimal;
+  import lombok.AllArgsConstructor;
   import lombok.Data;
+  import lombok.NoArgsConstructor;
   
   @Data
+  @NoArgsConstructor
+  @AllArgsConstructor
   public class Employee {
       private long id;
       private String name;
-      private Float salary;
+      private BigDecimal salary;
       private Integer age;
       private String ProfileImage;
   }
@@ -183,7 +188,10 @@ Foi utilizado na aplicação o padrão de projeto de Camada de Serviço/ServiceL
           }
           employee.setId(id);
           Employee result = service.update(employee);
-          return new ResponseEntity<Employee>(result, HttpStatus.OK);
+          if (result == null)
+              return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+          else
+              return new ResponseEntity<Employee>(result, HttpStatus.OK);
       }
   
       // DELETE /api/employees/1 - deleta employee com id 1
@@ -237,6 +245,7 @@ Foi utilizado na aplicação o padrão de projeto Repository para abstrair a cam
   import com.employees.restapi.models.Employee;
   import com.employees.restapi.repositories.IEmployeesRepository;
   import org.springframework.beans.factory.annotation.Autowired;
+  import org.springframework.beans.factory.annotation.Qualifier;
   import org.springframework.stereotype.Component;
   
   @Component
@@ -245,7 +254,9 @@ Foi utilizado na aplicação o padrão de projeto Repository para abstrair a cam
       
 	  
 	  @Autowired
-	  public EmployeesService(IEmployeesRepository repository) {
+	  public EmployeesService(
+            @Qualifier("employeesRepositoryMemory") IEmployeesRepository repository
+            ) {
           this.repository = repository;
       }
   
@@ -297,7 +308,7 @@ Neste exemplo, vamos apenas salvar os dados na memória da aplicação. Posterio
   import com.employees.restapi.models.Employee;
   import org.springframework.stereotype.Component;
   
-  @Component
+  @Component("employeesRepositoryMemory")
   public class EmployeesRepositoryMemory implements IEmployeesRepository {
   
       private static Long idCount = 0L;
