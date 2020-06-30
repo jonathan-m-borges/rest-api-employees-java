@@ -4,12 +4,19 @@ import java.util.Collection;
 import com.employees.restapi.models.Employee;
 import com.employees.restapi.repositories.IEmployeesRepository;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class EmployeesService implements IEmployeesService {
     private IEmployeesRepository repository;
-    public EmployeesService(IEmployeesRepository repository) {
+
+    @Autowired
+    public EmployeesService(
+            //@Qualifier("employeesRepositoryMemory") IEmployeesRepository repository
+            @Qualifier("employeesRepositoryPgSql") IEmployeesRepository repository
+            ) {
         this.repository = repository;
     }
 

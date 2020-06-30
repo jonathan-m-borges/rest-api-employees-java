@@ -68,7 +68,10 @@ public class EmployeesController {
         }
         employee.setId(id);
         Employee result = service.update(employee);
-        return new ResponseEntity<Employee>(result, HttpStatus.OK);
+        if (result == null)
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        else
+            return new ResponseEntity<Employee>(result, HttpStatus.OK);
     }
 
     // DELETE /api/employees/1 - deleta employee com id 1

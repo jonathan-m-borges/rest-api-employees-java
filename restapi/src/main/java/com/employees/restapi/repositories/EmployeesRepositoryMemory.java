@@ -1,11 +1,12 @@
 package com.employees.restapi.repositories;
+
 import java.util.Collection;
 import java.util.HashMap;
 import com.employees.restapi.models.Employee;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("employeesRepositoryMemory")
 public class EmployeesRepositoryMemory implements IEmployeesRepository {
 
     private static Long idCount = 0L;
@@ -44,7 +45,7 @@ public class EmployeesRepositoryMemory implements IEmployeesRepository {
     public Employee deleteById(long id) {
         if (!map.containsKey(id))
             return null;
-        var employee = map.get(id);
+        Employee employee = map.get(id);
         map.remove(id);
         return employee;
     }
