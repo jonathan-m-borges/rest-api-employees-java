@@ -69,7 +69,7 @@ A recomendação neste tutorial é utilizar o **Postbird**.
   > ![Edit starters](./assets/add-lib-postgre-02.png)
 - Como resultado, será adicionado a dependência do PostgreeSQL no seu seu arquivo pom.xml, contendo:
   ```xml
-    <dependency>
+  <dependency>
     <groupId>org.postgresql</groupId>
     <artifactId>postgresql</artifactId>
     <scope>runtime</scope>
@@ -329,7 +329,7 @@ Para testar os endpoints da aplicação, vamos utilizar o Postman.
 - A aplicação estará rodando nas urls:
   - http://localhost:8080/api/employees
 
-Em paralelo, execute os comandos SQL no Postird para verificar que os dados foram persistidos no banco.
+Em paralelo, execute os comandos SQL no Postbird para verificar que os dados foram persistidos no banco.
 
 
 ---
